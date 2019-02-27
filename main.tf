@@ -42,9 +42,8 @@ resource "aws_iam_role" "api" {
 EOF
 }
 
-// TODO Look into restrciting policy in line with Serverless example
-resource "aws_iam_role_policy" "api_allow_all_dynamodb" {
-  name = "${var.appsync_name}_dynamodb_allow_all_policy"
+resource "aws_iam_role_policy" "api_to_dynamodb_policy" {
+  name = "${var.appsync_name}_api_dynamodb_policy"
   role = "${aws_iam_role.api.id}"
 
   policy = <<EOF
@@ -53,7 +52,8 @@ resource "aws_iam_role_policy" "api_allow_all_dynamodb" {
   "Statement": [
     {
       "Action": [
-        "dynamodb:*"
+        "dynamodb:PutItem",
+        "dynamodb:Scan"
       ],
       "Effect": "Allow",
       "Resource": [
