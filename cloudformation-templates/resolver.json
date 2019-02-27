@@ -1,0 +1,47 @@
+{
+  "Parameters": {
+    "graphQlApiId": {
+      "Type": "String"
+    },
+    "dataSourceName": {
+      "Type": "String"
+    },
+    "fieldName": {
+      "Type": "String"
+    },
+    "typeName": {
+      "Type": "String"
+    },
+    "requestMappingTemplate": {
+      "Type": "String"
+    },
+    "responseMappingTemplate": {
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "Resolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Ref": "graphQlApiId"
+        },
+        "TypeName": {
+          "Ref": "typeName"
+        },
+        "FieldName": {
+          "Ref": "fieldName"
+        },
+        "DataSourceName": {
+          "Ref": "dataSourceName"
+        },
+        "RequestMappingTemplate": {
+          "Ref": "requestMappingTemplate"
+        },
+        "ResponseMappingTemplate": {
+          "Ref": "responseMappingTemplate"
+        }
+      }
+    }
+  }
+}

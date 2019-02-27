@@ -1,0 +1,19 @@
+type Person {
+	id: String!
+	name: String!
+}
+
+type Mutation {
+	createPerson(
+		name: String!,
+	): Person!
+}
+
+type Query {
+	listPeople: [Person]!
+}
+
+schema {
+	query: Query
+	mutation: Mutation
+}

@@ -1,0 +1,19 @@
+{
+  "Parameters" : {
+    "graphQlApiId" : {
+      "Type" : "String"
+    },
+    "graphQlSchema" : {
+      "Type" : "String"
+    }
+  },
+  "Resources" : {
+    "schema": {
+      "Type" : "AWS::AppSync::GraphQLSchema",
+      "Properties" : {
+        "ApiId" : { "Ref" : "graphQlApiId" },
+        "Definition" : { "Ref" : "graphQlSchema" }
+      }
+    }
+  }
+}
