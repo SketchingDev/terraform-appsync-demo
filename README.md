@@ -1,6 +1,6 @@
 # Deploying AWS AppSync using Terraform
 
-This project accompanies a [blog article I wrote](https://tech.ovoenergy.com/deploying-appsync-with-terraform/) demonstrating how to use CloudFormation with Terraform to deploy AppSync
+This project accompanies a [blog article I wrote](https://sketchingdev.co.uk/blog/deploying-appsync-with-terraform.html) demonstrating how to use CloudFormation with Terraform to deploy AppSync
 components that are not yet supported by Terraform's AWS Provider.
 
 It will deploy an API with the ability to create and list people.
